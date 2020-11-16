@@ -11,6 +11,12 @@ import java.time.LocalDate;
 public class Practice2 {
 
   public static LocalDate getNextWorkDate(LocalDate date) {
-    return null;
+    if (date.getDayOfWeek().getValue() == 5) {
+        return LocalDate.of(date.getYear(),date.getMonth(), date.getDayOfMonth()+3);
+    }else if (date.getDayOfWeek().getValue() == 6) {
+      return LocalDate.of(date.getYear(),date.getMonth(), date.getDayOfMonth()+2);
+    }else {
+      return LocalDate.of(date.getYear(),date.getMonth(), date.getDayOfMonth()+1);
+    }
   }
 }
