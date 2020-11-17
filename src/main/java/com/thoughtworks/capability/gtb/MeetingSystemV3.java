@@ -46,6 +46,7 @@ public class MeetingSystemV3 {
       //period实现下一个时间的计算
       Period nextMeeting = Period.ofDays(1);
       LocalDateTime nextMeetingTime = currMeetingTime.plus(nextMeeting);
+      nextMeetingTime = nextMeetingTime.withDayOfYear(now.getDayOfYear());
 
       //将新 meetingTime 由北京时间转换为芝加哥时间
       ZonedDateTime curZonedMeetingTime = ZonedDateTime.of(nextMeetingTime, currentZoneId);
